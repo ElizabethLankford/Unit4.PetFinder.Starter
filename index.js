@@ -8,10 +8,11 @@ const app = express();
 const PORT = 8080;
 
 // GET - / - returns homepage
-app.get("/", (req, res) => {
-  // serve up the public folder as static index.html file
-  res.sendFile(__dirname + "/public/index.html");
-});
+// app.get("/", (req, res) => {
+//   // serve up the public folder as static index.html file
+//   res.sendFile(__dirname + "/public/index.html");
+// });
+app.use(express.static("public"));
 
 // hello world route
 app.get("/api", (req, res) => {
